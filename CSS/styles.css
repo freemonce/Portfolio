@@ -1,0 +1,70 @@
+/* 기본 레이아웃 스타일 */
+.skills-section {
+  padding: 20px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between; /* 스킬 이름과 별점을 양 끝으로 분리 */
+  align-items: center;
+  margin-bottom: 15px;
+  max-width: 400px; /* 적절한 너비 설정 */
+}
+
+.skill-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* --- 별점 구현 핵심 CSS --- */
+
+/* 별점 컨테이너 설정 */
+.star-rating {
+  --rating: 0; /* HTML에서 이 변수를 덮어씁니다 (예: 3.5) */
+  --star-size: 30px; /* 별 하나의 크기 */
+  --star-color-empty: #555; /* 빈 별의 색상 (회색) */
+  --star-color-filled: white; /* 채워진 별의 색상 (흰색) */
+  --star-count: 5; /* 총 별의 개수 */
+
+  width: calc(var(--star-size) * var(--star-count)); /* 전체 별점 영역의 너비 */
+  height: var(--star-size);
+  position: relative; /* 자식 요소 stars를 위한 기준점 */
+  overflow: hidden; /* 그라데이션 효과를 별점 크기에 맞추기 위해 사용 */
+}
+
+/* 별 아이콘 배경 (빈 별) */
+.stars {
+  /* 유니코드 별 기호를 사용하여 별 5개를 표시 */
+  /* ★ (유니코드 U+2605) 대신 ☆ (U+2606)를 사용하여 빈 별 모양을 표현할 수도 있습니다. */
+  content: "★★★★★";
+  font-size: var(--star-size);
+  letter-spacing: 5px; /* 별 사이 간격 */
+  color: var(--star-color-empty); /* 기본적으로 빈 별 색상 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* (선택 사항) 글꼴을 설정하여 별 모양이 일관되게 보이도록 할 수 있습니다. */
+  font-family: "Arial", sans-serif;
+}
+
+/* 채워진 별을 표시하는 핵심 기법: 마스크 또는 그라데이션 */
+.star-rating::before {
+  content: "★★★★★";
+  font-size: var(--star-size);
+  letter-spacing: 5px;
+  color: var(--star-color-filled); /* 채워진 별 색상 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  /* 계산된 별점 비율만큼만 별을 채우는 핵심 로직 */
+  width: calc(var(--rating) / var(--star-count) * 100%);
+  z-index: 1; /* 빈 별 위에 위치 */
+  /* (선택 사항) 글꼴 설정 */
+  font-family: "Arial", sans-serif;
+}
