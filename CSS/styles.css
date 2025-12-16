@@ -1,70 +1,412 @@
-/* 기본 레이아웃 스타일 */
-.skills-section {
-  padding: 20px;
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-.skills-list {
+ul,
+li {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+}
+
+.all-container + span {
+  flex: 1;
+}
+
+/* 전체 컨테이너 박스 */
+.all-container {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px;
+  /* 상하여백: 0  좌우여백: 16px  */
+  background-color: #222;
+}
+
+/* 헤더 섹션 */
+.header-section {
+  /* display: flex;
+  flex-direction: column; */
+  height: 500px;
+  position: relative;
+  /* flex: 1; */
+  margin-bottom: 40px;
+}
+
+/* 헤더 배경이미지 */
+.header-background-image {
+  width: 100%;
+  height: 550px;
+}
+
+/* 헤더 배경 이미지 (img 태그)의 높이를 명확히 지정 */
+.header-background-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 포토박스 */
+.id-photo-box {
+  position: absolute;
+  width: 240px;
+  height: 260px;
+  top: 30px;
+  left: 45%;
+  transform: translateX(-50%) rotate(-8deg);
+  z-index: 2;
+}
+
+.id-photo-box > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 증명사진 */
+.id-photo {
+  position: absolute;
+  width: 230px;
+  height: 250px;
+  top: 15px;
+  left: 15px;
+}
+
+/*  땡땡이 왼쪽 */
+.tinkle-icon {
+  position: absolute;
+  width: 84px;
+  height: 100px;
+  background-image: url("../images/헤더 이미지/땡땡이_Vector.svg");
+  top: 250px;
+  left: 5px;
+  transform: rotate(10deg); /* 각도 조절 */
+  background-size: contain;
+}
+
+/*  xxx 오른쪽 */
+.xxx-icon {
+  position: absolute;
+  width: 90px;
+  height: 50px;
+  background-image: url("../images/헤더 이미지/xxx\ \ Vector.svg");
+  top: 270px;
+  right: 3px;
+  transform: rotate(5deg); /* 각도 조절 */
+  background-size: contain;
+}
+
+/* 화살표 오른쪽 아래 */
+.arrow-icon {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  background-image: url("../images/헤더 이미지/화살표\ Vector.svg");
+  bottom: 100px;
+  right: 5px;
+
+  transform: rotate(-10deg);
+  background-size: contain;
+}
+
+/* 헤더 이름 박스 */
+.header-namebox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 320px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  text-align: center;
+  z-index: 2;
+}
+
+.full-name {
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  font-style: oblique;
+}
+
+.job-name {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: oblique;
+  margin-top: 15px;
+}
+
+/* 메인 섹션 */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-section section {
+  margin-bottom: 40px;
+}
+
+.main-section h2 {
+  font-size: 30px;
+  font-family: "Inter" sans-serif;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  padding-right: 40px;
+  margin-bottom: 25px;
+  z-index: 5;
+}
+
+.main-section p,
+.main-section li {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.5;
+  font-family: "Noto Sans Lao", sans-serif;
+}
+
+.aboutme-container h2.section-title::after {
+  background-image: url("../images/메인 이미지/about\ me\ -\ 핀\ .svg");
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  right: -30px;
+  z-index: 10;
+}
+
+li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  left: 0;
+  top: 0.6em;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+}
+
+.education-container h2.section-title::after {
+  background-image: url("../images/메인 이미지/Education\ -\ 핀.svg");
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  right: -30px;
+  z-index: 10;
+}
+
+.circle-score-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.year-edu-box,
+.score-box {
+  font-size: 18px;
+  font-family: "Inter" sans-serif;
+  color: #fff;
+  width: 120px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+/* 스킬 컨테이너 */
+.skill-list-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-item {
   display: flex;
-  justify-content: space-between; /* 스킬 이름과 별점을 양 끝으로 분리 */
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  max-width: 400px; /* 적절한 너비 설정 */
+  margin-bottom: 5px;
 }
 
-.skill-name {
-  font-size: 1.2em;
-  font-weight: bold;
+.skill-name-text {
+  flex-basis: 50%;
 }
 
-/* --- 별점 구현 핵심 CSS --- */
-
-/* 별점 컨테이너 설정 */
-.star-rating {
-  --rating: 0; /* HTML에서 이 변수를 덮어씁니다 (예: 3.5) */
-  --star-size: 30px; /* 별 하나의 크기 */
-  --star-color-empty: #555; /* 빈 별의 색상 (회색) */
-  --star-color-filled: white; /* 채워진 별의 색상 (흰색) */
-  --star-count: 5; /* 총 별의 개수 */
-
-  width: calc(var(--star-size) * var(--star-count)); /* 전체 별점 영역의 너비 */
-  height: var(--star-size);
-  position: relative; /* 자식 요소 stars를 위한 기준점 */
-  overflow: hidden; /* 그라데이션 효과를 별점 크기에 맞추기 위해 사용 */
-}
-
-/* 별 아이콘 배경 (빈 별) */
-.stars {
-  /* 유니코드 별 기호를 사용하여 별 5개를 표시 */
-  /* ★ (유니코드 U+2605) 대신 ☆ (U+2606)를 사용하여 빈 별 모양을 표현할 수도 있습니다. */
-  content: "★★★★★";
-  font-size: var(--star-size);
-  letter-spacing: 5px; /* 별 사이 간격 */
-  color: var(--star-color-empty); /* 기본적으로 빈 별 색상 */
+.skill-container h2.section-title::after {
+  background-image: url("../images/메인 이미지/Skils\ -\ 핀.svg");
+  content: "";
   position: absolute;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
   top: 0;
-  left: 0;
-  /* (선택 사항) 글꼴을 설정하여 별 모양이 일관되게 보이도록 할 수 있습니다. */
-  font-family: "Arial", sans-serif;
+  right: -30px;
+  z-index: 10;
 }
 
-/* 채워진 별을 표시하는 핵심 기법: 마스크 또는 그라데이션 */
-.star-rating::before {
-  content: "★★★★★";
-  font-size: var(--star-size);
-  letter-spacing: 5px;
-  color: var(--star-color-filled); /* 채워진 별 색상 */
+/* 별점 아이콘 */
+.rating-box i {
+  font-size: 20px;
+  color: #fff;
+  margin-left: 2px;
+}
+
+.rating-box .fas {
+  color: #fff;
+}
+
+.rating-box .far {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Experience 제목 핀 아이콘 배치 */
+.experince-container .section-title::after {
+  background-image: url("../images/메인 이미지/Experience\ -\ 핀.svg"); /* 핀 이미지 경로 */
+  content: "";
+  position: absolute; /* .section-title (h2)가 relative 기준점 */
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  top: 0px;
+  right: -30px;
+
+  z-index: 10;
+}
+
+/* 직무 제목 (고객 서비스/상담 담당) */
+.experince-container h3 {
+  font-size: 24px; /* 제목 (h2)보다는 작게 */
+  font-weight: 500;
+  color: #fff;
+  margin: 20px 0 10px 0; /* 위쪽/아래쪽 여백 확보 */
+}
+
+/* 경력 기간 박스를 담는 컨테이너 */
+.circle-experience-box {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  /* .experience-box를 중앙에 배치하기 위해 사용 */
+  text-align: center;
+}
+
+.experience-box {
+  width: 250px;
+  height: 30px;
+
+  border-radius: 20px;
+  border: 1px solid #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 폰트 스타일 (기존 p 스타일과 유사) */
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* 푸터 컨테이너 */
+.footer-section {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.footer-background-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-background-image h4 {
   position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  /* 계산된 별점 비율만큼만 별을 채우는 핵심 로직 */
-  width: calc(var(--rating) / var(--star-count) * 100%);
-  z-index: 1; /* 빈 별 위에 위치 */
-  /* (선택 사항) 글꼴 설정 */
-  font-family: "Arial", sans-serif;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 30px;
+  font-weight: 400;
+  color: #333;
+  z-index: 5;
+}
+
+.contact-list {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
+  z-index: 5;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-wrapper {
+  width: 35px;
+  height: 35px;
+
+  /* background-color: #333; */
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 15px;
+}
+
+.contact-detail {
+  font-size: 18px;
+  color: #333;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.contact-icon-img {
+  width: 18px; /* 아이콘 크기 조절 */
+  height: 18px; /* 아이콘 크기 조절 */
+  filter: none;
 }

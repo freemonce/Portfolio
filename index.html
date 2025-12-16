@@ -22,12 +22,12 @@
             alt="포트폴리오 윗배경 사진"
           />
           <!-- 증명사진 -->
-          <div class="ID-photo-box">
+          <div class="id-photo-box">
             <img
               src="./images/헤더 이미지/증명사진 아래 배경.png"
               alt="증명사진 배경박스"
             />
-            <div class="ID-photo">
+            <div class="id-photo">
               <img
                 src="./images/헤더 이미지/증명사진.png"
                 alt="이승주 개발자의 증명사진"
@@ -38,7 +38,7 @@
           <!-- 아이콘 이미지 -->
           <div class="header-icon-image" aria-hidden="true">
             <!-- 땡땡이 왼쪽 세우기 -->
-            <div class="Tinkle-icon"></div>
+            <div class="tinkle-icon"></div>
             <!-- XXX 오른쪽 세우기 -->
             <div class="xxx-icon"></div>
             <!-- 화살표 오른쪽 아래 세우기 -->
@@ -47,7 +47,10 @@
 
           <!-- 헤더 이름 박스 -->
           <div class="header-namebox">
-            <h1 class="full-name">SEUNG JU <br />LEE</h1>
+            <h1 class="full-name">
+              SEUNGJU <br />
+              LEE
+            </h1>
             <p class="job-name">front-end developer</p>
           </div>
         </div>
@@ -57,7 +60,7 @@
       <main class="main-section">
         <!-- about-me 컨테이너 -->
         <section class="aboutme-container">
-          <h2>About me</h2>
+          <h2 class="section-title">About me</h2>
           <!-- about-me의 오른쪽에 red-pin 정렬
           <img
             src="./images/메인 이미지/about me - 핀 .svg"
@@ -66,16 +69,20 @@
           /> -->
           <ul>
             <li>사용자 경험을 설계하는 프론트엔드 개발자를 희망합니다.</li>
+
             <li>
               이전 고객 상담 경험을 통해 사용자의 니즈를 깊이 이해하고 있습니다.
             </li>
+
             <li>
               꾸준한 학습을 통해 전문성을 갖춘 안정적인 커리어를 구축하고자
               합니다.
             </li>
+
             <li>
               경청을 기반으로 한 탁월한 의사소통 능력으로 팀 협업에 기여합니다.
             </li>
+
             <li>
               개발 역량과 함께 강한 체력과 긍정적인 정신력을 꾸준히 단련합니다.
             </li>
@@ -90,73 +97,73 @@
             alt="education cyan pin"
             class="cyan-pin"
           /> -->
-          <h2>Education</h2>
+          <h2 class="section-title">Education</h2>
           <p class="education-history">
             [이스트캠프] <br />
             오르미 프론트엔드 11기 <br />
             (React, HTML/CSS/JavaScript)
           </p>
-          <!-- edu-box : 왼쪽 -->
-          <div class="year-edu-box">2025-2026</div>
-          <!-- score-box : 오른쪽 -->
-          <div class="score-box">GPA: 3.67</div>
+
+          <div class="circle-score-box">
+            <!-- edu-box : 왼쪽 -->
+            <div class="year-edu-box">2025 - 2026</div>
+            <!-- score-box : 오른쪽 -->
+            <div class="score-box">GPA: 3.67</div>
+          </div>
         </section>
 
         <!-- Skill 컨테이너 -->
         <section class="skill-container">
-          <h2>Skill</h2>
-          <!-- skill 오른쪽 옆의 라임그린 pin 정렬
-          <img
-            src="./images/메인 이미지/Skils - 핀.svg"
-            alt="Skill 라임그린 pin"
-            class="limegreen-pin"
-          /> -->
-          <!-- 스킬네임 : 왼쪽 정렬 -->
-          <p class="skill-name">
-            HTML/CSS <br />
-            의사소통 능력 <br />
-            개발 역량 <br />
-          </p>
+          <h2 class="section-title">Skill</h2>
+          <div class="skill-list-wrapper">
+            <!-- HTML/CSS 별 3.5점-->
+            <div class="skill-item">
+              <p class="skill-name-text">HTML/CSS</p>
+              <div class="rating-box rating-HTML">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
 
-          <!-- HTML/CSS 별 3.5점-->
-          <div class="rating-HTML">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <i class="far fa-star"></i>
-          </div>
+            <!-- 의사소통 능력 별 4점-->
+            <div class="skill-item">
+              <p class="skill-name-text">의사소통 능력</p>
+              <div class="rating-box rating-comm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
 
-          <!-- 의사소통 능력 별 4점-->
-          <div class="rating-comm">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-
-          <!-- 개발 역량 별 3.5점-->
-          <div class="rating-Dev">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <i class="far fa-star"></i>
+            <!-- 개발 역량 별 3.5점-->
+            <div class="skill-item">
+              <p class="skil-name-text">개발 역량</p>
+              <div class="rating-box rating-Dev">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Experience 컨테이너 -->
         <section class="experince-container">
-          <h2>Experience</h2>
-          <!-- experience 오른쪽 옆의 magenta pin 정렬
-          <img
-            src="./images/메인 이미지/Experience - 핀.svg"
-            alt="Experience 마젠타 pin"
-            class="magenta-pin"
-          /> -->
-          <div class="experience-box">청송뜨개실 | 2018 - 2025</div>
+          <h2 class="section-title">Experience</h2>
+
+          <div class="circle-experience-box">
+            <p class="experience-box">청송뜨개실 | 2018 - 2025</p>
+          </div>
+
           <h3>고객 서비스/상담 담당</h3>
+
           <ul>
             <li>
               핵심 채널 운영 효율화: <br />
@@ -186,34 +193,53 @@
         <div class="footer-background-image">
           <img
             src="./images/푸터 이미지/푸터 배경이미지.png"
-            alt="footer 배경 이미지"
+            alt="푸터 배경이미지"
           />
-          <!-- 배경 이미지 안의 내용 -->
           <h4>CONTACT</h4>
-          <!-- 푸터 아이콘 박스(전화, 메세지, 지도) -->
-          <img
-            src="./images/푸터 이미지/전화 아이콘.svg"
-            alt="전화 아이콘"
-            class="call-icon"
-          />
-          <img
-            src="./images/푸터 이미지/메세지 아이콘.svg"
-            alt="메세지 아이콘"
-            class="message-icon"
-          />
-          <img
-            src="./images/푸터 이미지/지도 아이콘.svg"
-            alt="지도 아이콘"
-            class="map-icon"
-          />
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="icon-wrapper">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3
+        1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1
+        C10.6 22 2 13.4 2 3.9c0-.6.4-1 1-1H6.5c.6 0 1 .4 1 1
+        0 1.3.2 2.5.6 3.7.1.4 0 .8-.3 1.1L6.6 10.8z"
+                  />
+                </svg>
+              </div>
+              <p class="contact-detail">+010-0000-0000</p>
+            </div>
 
-          <!-- 푸터 전화, 이메일주소, 지도 내용 -->
-          <p class="call-detail">+010-0000-0000</p>
-          <p class="email-detail">zestsettlesz@gmail.com</p>
-          <p class="map-detail">123 Anywhere St., Any City</p>
+            <div class="contact-item">
+              <div class="icon-wrapper">
+                <img
+                  src="./images/푸터 이미지/메세지 아이콘.svg"
+                  alt="메세지 아이콘"
+                  class="contact-icon-img"
+                />
+              </div>
+              <p class="contact-detail">zestsettlesz@gmail.com</p>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon-wrapper">
+                <img
+                  src="./images/푸터 이미지/지도 아이콘.svg"
+                  alt="지도 아이콘"
+                  class="contact-icon-img"
+                />
+              </div>
+              <p class="contact-detail">123 Anywhere St., Any City</p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
-    <section>와우와우와우</section>
+    <span>와우와우와우</span>
   </body>
 </html>
