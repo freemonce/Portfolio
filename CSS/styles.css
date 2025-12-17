@@ -18,28 +18,47 @@ li {
 
 /* 전체 컨테이너 박스 */
 .all-container {
-  width: 430px;
+  width: 100%;
+  min-width: 440px;
   display: flex;
   flex-direction: column;
-  padding: 0 25px;
+  padding: 0 16px;
   /* 상하여백: 0  좌우여백: 16px  */
   background-color: #222;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 /* 헤더 섹션 */
 .header-section {
-  /* display: flex;
-  flex-direction: column; */
   height: 500px;
   position: relative;
-  /* flex: 1; */
   margin-bottom: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-content-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  z-index: 10;
 }
 
 /* 헤더 배경이미지 */
 .header-background-image {
   width: 100%;
-  height: 550px;
+  height: 100%;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-background-image img {
+  width: 100%;
+  display: block;
 }
 
 /* 헤더 배경 이미지 (img 태그)의 높이를 명확히 지정 */
@@ -47,17 +66,19 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 /* 포토박스 */
 .id-photo-box {
   position: absolute;
-  width: 240px;
-  height: 260px;
-  top: 30px;
+  width: 200px;
+  height: 220px;
+  top: 20px;
   left: 45%;
   transform: translateX(-50%) rotate(-8deg);
   z-index: 2;
+  display: flex;
 }
 
 .id-photo-box > img {
@@ -71,22 +92,47 @@ li {
 /* 증명사진 */
 .id-photo {
   position: absolute;
-  width: 230px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   top: 15px;
   left: 15px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+.id-photo:hover {
+  background-image: url("../images/헤더_이미지/짱구_흰둥이_움짤.gif");
+}
+
+.id-photo:hover img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.id-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1; /* 사진이 위로 오도록 */
 }
 
 /*  땡땡이 왼쪽 */
 .tinkle-icon {
   position: absolute;
-  width: 84px;
+  width: 100px;
   height: 100px;
-  background-image: url("../images/헤더 이미지/땡땡이_Vector.svg");
-  top: 250px;
+  background-image: url("../images/헤더_이미지/땡땡이_Vector.svg");
+  top: 150px;
   left: 5px;
   transform: rotate(10deg); /* 각도 조절 */
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 /*  xxx 오른쪽 */
@@ -94,8 +140,8 @@ li {
   position: absolute;
   width: 90px;
   height: 50px;
-  background-image: url("../images/헤더 이미지/xxx\ \ Vector.svg");
-  top: 270px;
+  background-image: url("../images/헤더_이미지/xxx_Vector.svg");
+  top: 150px;
   right: 3px;
   transform: rotate(5deg); /* 각도 조절 */
   background-size: contain;
@@ -106,7 +152,7 @@ li {
   position: absolute;
   width: 100px;
   height: 34px;
-  background-image: url("../images/헤더 이미지/화살표\ Vector.svg");
+  background-image: url("../images/헤더_이미지/화살표_Vector.svg");
   bottom: 100px;
   right: 5px;
 
@@ -114,12 +160,20 @@ li {
   background-size: contain;
 }
 
+.arrow-icon:hover,
+.full-name:hover,
+.job-name:hover,
+.rating-box:hover {
+  scale: 1.2;
+  transition: scale 0.3s ease;
+}
+
 /* 헤더 이름 박스 */
 .header-namebox {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 320px;
+  top: 290px;
   left: 50%;
   transform: translateX(-50%) rotate(-5deg);
   text-align: center;
@@ -127,7 +181,7 @@ li {
 }
 
 .full-name {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   letter-spacing: 0.1rem;
@@ -175,7 +229,7 @@ li {
 }
 
 .aboutme-container h2.section-title::after {
-  background-image: url("../images/메인 이미지/about\ me\ -\ 핀\ .svg");
+  background-image: url("../images/메인_이미지/about_me-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -208,7 +262,7 @@ li::before {
 }
 
 .education-container h2.section-title::after {
-  background-image: url("../images/메인 이미지/Education\ -\ 핀.svg");
+  background-image: url("../images/메인_이미지/Education-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -239,6 +293,13 @@ li::before {
   text-align: center;
 }
 
+.circle-score-box:hover,
+.circle-experience-box:hover {
+  transform-origin: left center;
+  scale: 1.2;
+  transition: scale 0.3s ease;
+}
+
 /* 스킬 컨테이너 */
 .skill-list-wrapper {
   display: flex;
@@ -257,7 +318,7 @@ li::before {
 }
 
 .skill-container h2.section-title::after {
-  background-image: url("../images/메인 이미지/Skils\ -\ 핀.svg");
+  background-image: url("../images/메인_이미지/Skils-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -285,8 +346,8 @@ li::before {
 }
 
 /* Experience 제목 핀 아이콘 배치 */
-.experince-container .section-title::after {
-  background-image: url("../images/메인 이미지/Experience\ -\ 핀.svg"); /* 핀 이미지 경로 */
+.experience-container .section-title::after {
+  background-image: url("../images/메인_이미지/Experience-핀.svg"); /* 핀 이미지 경로 */
   content: "";
   position: absolute; /* .section-title (h2)가 relative 기준점 */
   width: 35px;
@@ -301,11 +362,11 @@ li::before {
 }
 
 /* 직무 제목 (고객 서비스/상담 담당) */
-.experince-container h3 {
-  font-size: 24px; /* 제목 (h2)보다는 작게 */
+.experience-container h3 {
+  font-size: 25px; /* 제목 (h2)보다는 작게 */
   font-weight: 500;
   color: #fff;
-  margin: 20px 0 10px 0; /* 위쪽/아래쪽 여백 확보 */
+  margin: 20px 0 20px 0; /* 위쪽/아래쪽 여백 확보 */
 }
 
 /* 경력 기간 박스를 담는 컨테이너 */
@@ -342,71 +403,285 @@ li {
   line-height: 1.5;
 }
 
-/* 푸터 컨테이너 */
+.main-section section:last-child {
+  margin-bottom: 0;
+}
+
+/* 푸터 전체 영역 */
 .footer-section {
+  width: 100%;
+  height: 350px; /* 배경 이미지 높이에 맞춰 넉넉히 조절 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 바닥에 고정 */
+  overflow: hidden;
+  background-color: #222;
+  padding-top: 20px; /* 전체 배경색 */
+}
+
+.footer-inner {
   position: relative;
-  width: 100%;
-  height: 350px;
+  width: 1200px; /* 배경 이미지의 실제 가로 크기 */
+  height: 350px; /* 배경 이미지의 실제 세로 크기 */
+  background-image: url("../images/푸터_이미지/푸터_배경이미지.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  flex-shrink: 0; /* 화면이 작아져도 배경 크기가 줄어들지 않게 고정 */
+  transform: scale(0.6);
 }
 
-.footer-background-image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.footer-background-image h4 {
+/* 배경 안의 실제 콘텐츠 박스 */
+.footer-content-wrapper {
   position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 130px; /* 종이 이미지 내 위치에 맞춰 조정 */
+  left: 45%; /* 종이 이미지 내 위치에 맞춰 조정 */
 
-  font-size: 30px;
-  font-weight: 400;
+  /* 핵심: 배경 이미지의 기울기와 똑같은 각도로 회전 */
+  transform: rotate(
+    -5deg
+  ); /* 이미지 기울기에 따라 -3~ -7도 사이로 미세조정하세요 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-content-wrapper h4 {
+  font-size: 2rem;
+  font-weight: bold;
   color: #333;
-  z-index: 5;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .contact-list {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 300px;
-  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .icon-wrapper {
-  width: 35px;
-  height: 35px;
-
-  /* background-color: #333; */
-  border: 1px solid #333;
+  width: 32px;
+  height: 32px;
+  background-color: #333;
   border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin-right: 15px;
+  margin-right: 12px;
 }
 
 .contact-detail {
-  font-size: 18px;
+  font-size: 20px;
   color: #333;
-  font-family: "Inter", sans-serif;
-  margin: 0;
+  font-weight: 500;
+  white-space: nowrap; /* 줄바꿈 방지 */
 }
 
 .contact-icon-img {
-  width: 18px; /* 아이콘 크기 조절 */
-  height: 18px; /* 아이콘 크기 조절 */
-  filter: none;
+  width: 16px;
+  height: 16px;
+  filter: invert(100%);
+}
+
+/* 태블릿 섹션 (850px 이상) */
+@media (min-width: 850px) {
+  .all-container {
+    padding: 0 40px;
+  }
+
+  .header-content-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+    height: 100%;
+    position: relative;
+  }
+
+  .id-photo-box {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: rotate(-5deg) scale(1.1);
+    margin-left: 0;
+  }
+
+  /* 이름 박스: 사진 아래 중앙 배치 */
+  .header-namebox {
+    position: relative;
+    left: 0;
+    top: 0;
+    text-align: center;
+    transform: rotate(-5deg) scale(1.2);
+    /* font-size: 5rem; */
+  }
+
+  .full-name {
+    font-size: 4rem;
+    list-style: 1.1;
+  }
+
+  /* 아이콘들은 사진 주변에 고정 (px 값 권장) */
+  .tinkle-icon {
+    position: absolute;
+    left: 10%;
+    top: 100px;
+    transform: scale(1.5);
+  }
+  .xxx-icon {
+    position: absolute;
+    right: 1%;
+    top: 120px;
+    transform: scale(1.5);
+  }
+
+  .arrow-icon {
+    position: absolute;
+    right: 15%;
+    bottom: 50px;
+    transform: scale(1.5);
+  }
+
+  /* 메인 섹션을 그리드로 변경 */
+  .main-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-areas:
+      "about exp"
+      "edu exp"
+      "skill exp";
+    gap: 40px 60px; /*  상하 40px, 좌우 60px 간격*/
+    align-items: start;
+  }
+
+  /* 영역 지정 */
+  .aboutme-container {
+    grid-area: about;
+  }
+  .education-container {
+    grid-area: edu;
+  }
+  .skill-container {
+    grid-area: skill;
+  }
+  .experience-container {
+    grid-area: exp;
+  }
+
+  .aboutme-container {
+    margin-bottom: 20px;
+  }
+
+  .main-section section {
+    margin-bottom: 0;
+  }
+
+  .skill-list-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 450px;
+    flex-direction: column;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.8);
+    transform-origin: right;
+  }
+
+  .footer-content-wrapper {
+    left: 50%;
+    margin-left: -60px;
+    top: 120px;
+    transform: rotate(-5deg);
+    position: absolute;
+  }
+}
+
+/* PC/데스크탑 섹션 (1260px 이상) */
+@media (min-width: 1260px) {
+  .all-container {
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .header-section {
+    height: 550px; /* 배경 이미지 높이에 맞춰 조정 */
+  }
+
+  .header-content-inner {
+    display: block; /* 모바일의 flex 해제 */
+    position: absolute; /* 배경 이미지 위에 띄움 */
+    left: 50%;
+    transform: translateX(-50%); /* 정확히 화면 중앙 배치 */
+    width: 1200px;
+    height: 550px;
+  }
+
+  .id-photo-box {
+    position: absolute;
+    left: 230px;
+    top: 150px;
+    transform: rotate(-8deg) scale(1.5);
+    z-index: 50; /* 각도 유지 */
+  }
+
+  .header-namebox {
+    position: absolute;
+    right: -400px; /* 사진과 수직 정렬을 맞춤 */
+    top: 270px;
+    text-align: center;
+    transform: rotate(-5deg) scale(1.5);
+    font-size: 5rem;
+  }
+
+  .tinkle-icon {
+    left: 5%;
+    top: 150px;
+    transform: scale(1.8) rotate(15deg); /* 크기를 키워 여백 채움 */
+  }
+
+  .xxx-icon {
+    right: 5%;
+    top: 150px;
+    transform: scale(2) rotate(15deg); /* 크기를 키워 여백 채움 */
+  }
+
+  .arrow-icon {
+    right: 5%;
+    transform: scale(1.6);
+  }
+
+  .main-section {
+    grid-template-columns: 1fr 1fr 1.5fr; /* 3열: 마지막 Experience를 가장 넓게 */
+    grid-template-areas:
+      "about edu   exp"
+      "about skill exp";
+    gap: 50px 80px;
+  }
+
+  /* 푸터: 왼쪽 하단 배치 */
+  .footer-inner {
+    transform: scale(0.8);
+    margin-top: -40px;
+  }
+  .footer-content-wrapper {
+    left: 50%;
+    margin-left: -30px;
+    top: 130px;
+    transform: rotate(-5deg); /* 기울기 유지 */
+  }
 }
