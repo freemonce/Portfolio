@@ -22,9 +22,9 @@ li {
   min-width: 440px;
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
+  padding: 0 20px;
   /* 상하여백: 0  좌우여백: 16px  */
-  background-color: #222;
+  background-color: rgb(0, 0, 0);
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -58,6 +58,7 @@ li {
 
 .header-background-image img {
   width: 100%;
+  height: 100%;
   display: block;
 }
 
@@ -162,10 +163,23 @@ li {
 
 .arrow-icon:hover,
 .full-name:hover,
-.job-name:hover,
-.rating-box:hover {
+.job-name:hover {
   scale: 1.2;
   transition: scale 0.3s ease;
+}
+
+.rating-box:hover {
+  scale: 1.2;
+}
+
+.rating-box i:hover,
+.rating-box i:hover ~ i {
+  color: gold !important;
+}
+
+.rating-box .fas-star-half-alt:hover,
+.rating-box .fas-star-half-alt:hover ~ i {
+  color: gold !important;
 }
 
 /* 헤더 이름 박스 */
@@ -212,7 +226,6 @@ li {
   font-size: 30px;
   font-family: "Inter" sans-serif;
   font-weight: 500;
-  color: #fff;
   position: relative;
   display: inline-block;
   padding-right: 40px;
@@ -228,6 +241,23 @@ li {
   font-family: "Noto Sans Lao", sans-serif;
 }
 
+.main-section strong {
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-decoration: underline 1px solid rgba(255, 173, 234, 0.6);
+  text-underline-offset: 6px;
+}
+
+.section-title {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* 미세한 글로우 효과 */
+}
+
 .aboutme-container h2.section-title::after {
   background-image: url("../images/메인_이미지/about_me-핀.svg");
   content: "";
@@ -239,6 +269,29 @@ li {
   top: 0;
   right: -30px;
   z-index: 10;
+}
+
+.aboutme-container span {
+  color: #ff6b6f;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 107, 107, 0.4);
+}
+
+/* 개별 스타일: 색상변경 */
+.title-about {
+  color: #ff5e78;
+}
+
+.title-edu {
+  color: #a2faff;
+}
+
+.title-skill {
+  color: #a5e473;
+}
+
+.title-exp {
+  color: #ffadea;
 }
 
 li {
@@ -272,6 +325,11 @@ li::before {
   top: 0;
   right: -30px;
   z-index: 10;
+}
+
+.education-container span {
+  color: #a2faff;
+  font-weight: 600;
 }
 
 .circle-score-box {
@@ -310,11 +368,15 @@ li::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .skill-name-text {
-  flex-basis: 50%;
+  flex: 1;
+  white-space: nowrap;
+  margin-right: 15px;
 }
 
 .skill-container h2.section-title::after {
@@ -331,6 +393,16 @@ li::before {
 }
 
 /* 별점 아이콘 */
+.rating-box {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  transition: scale 0.3s ease;
+  cursor: pointer;
+}
+
 .rating-box i {
   font-size: 20px;
   color: #fff;
@@ -394,6 +466,11 @@ li::before {
   color: #fff;
 }
 
+.experience-container span {
+  color: #ffadea;
+  font-weight: 600;
+}
+
 li {
   position: relative;
   padding-left: 20px;
@@ -415,7 +492,7 @@ li {
   justify-content: center;
   align-items: flex-start; /* 바닥에 고정 */
   overflow: hidden;
-  background-color: #222;
+  background-color: rgb(0, 0, 0);
   padding-top: 20px; /* 전체 배경색 */
 }
 
@@ -453,6 +530,12 @@ li {
   color: #333;
   margin-bottom: 20px;
   margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.footer-content-wrapper h4:hover {
+  transform: scale(1.2);
 }
 
 .contact-list {
@@ -482,6 +565,24 @@ li {
   color: #333;
   font-weight: 500;
   white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.contact-detail.mail-link {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contact-detail.mail-link:hover {
+  color: #ff5e78;
+  font-weight: bold;
+  transform: translateX(5px);
+}
+
+.contact-item:hover .icon-wrapper {
+  background-color: #ff5e78;
+  transition: background-color 0.3s ease;
 }
 
 .contact-icon-img {
@@ -599,6 +700,8 @@ li {
     justify-content: center;
     transform: scale(0.8);
     transform-origin: right;
+    right: 0;
+    bottom: 0;
   }
 
   .footer-content-wrapper {
@@ -671,6 +774,11 @@ li {
       "about edu   exp"
       "about skill exp";
     gap: 50px 80px;
+  }
+
+  .skill-list-wrapper {
+    width: 100%;
+    max-width: 400px;
   }
 
   /* 푸터: 왼쪽 하단 배치 */
