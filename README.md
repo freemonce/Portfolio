@@ -1,7 +1,7 @@
 # HTML과 CSS만을 활용하여 제작한 **모바일 반응형 이력서 포트폴리오**입니다.
 
 ## Live Demo
-* [배포 링크 주소 입력 - 예: [GitHub Pages](https://freemonce.github.io/Portfolio/)]
+* [배포 링크 주소 입력 - (https://freemonce.github.io/Portfolio/)]
 
 ## Key Features
 - **Mobile-First Design**: 440px 너비의 모바일 환경에 최적화된 레이아웃 구현
