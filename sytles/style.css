@@ -105,7 +105,8 @@ li {
 }
 
 .id-photo:hover {
-  background-image: url("../images/헤더_이미지/짱구_흰둥이_움짤.gif");
+  background-image: url("../assets/img/헤더_이미지/짱구_흰둥이_움짤.gif");
+  cursor: pointer;
 }
 
 .id-photo:hover img {
@@ -127,7 +128,7 @@ li {
   position: absolute;
   width: 100px;
   height: 100px;
-  background-image: url("../images/헤더_이미지/땡땡이_Vector.svg");
+  background-image: url("../assets/img/헤더_이미지/땡땡이_Vector.svg");
   top: 150px;
   left: 5px;
   transform: rotate(10deg); /* 각도 조절 */
@@ -141,7 +142,7 @@ li {
   position: absolute;
   width: 90px;
   height: 50px;
-  background-image: url("../images/헤더_이미지/xxx_Vector.svg");
+  background-image: url("../assets/img/헤더_이미지/xxx_Vector.svg");
   top: 150px;
   right: 3px;
   transform: rotate(5deg); /* 각도 조절 */
@@ -153,7 +154,7 @@ li {
   position: absolute;
   width: 100px;
   height: 34px;
-  background-image: url("../images/헤더_이미지/화살표_Vector.svg");
+  background-image: url("../assets/img/헤더_이미지/화살표_Vector.svg");
   bottom: 100px;
   right: 5px;
 
@@ -166,10 +167,12 @@ li {
 .job-name:hover {
   scale: 1.2;
   transition: scale 0.3s ease;
+  cursor: pointer;
 }
 
 .rating-box:hover {
   scale: 1.2;
+  cursor: pointer;
 }
 
 .rating-box i:hover,
@@ -259,7 +262,7 @@ li {
 }
 
 .aboutme-container h2.section-title::after {
-  background-image: url("../images/메인_이미지/about_me-핀.svg");
+  background-image: url("../assets/img/메인_이미지/about_me-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -315,7 +318,7 @@ li::before {
 }
 
 .education-container h2.section-title::after {
-  background-image: url("../images/메인_이미지/Education-핀.svg");
+  background-image: url("../assets/img/메인_이미지/Education-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -356,6 +359,7 @@ li::before {
   transform-origin: left center;
   scale: 1.2;
   transition: scale 0.3s ease;
+  cursor: pointer;
 }
 
 /* 스킬 컨테이너 */
@@ -380,7 +384,7 @@ li::before {
 }
 
 .skill-container h2.section-title::after {
-  background-image: url("../images/메인_이미지/Skils-핀.svg");
+  background-image: url("../assets/img/메인_이미지/Skils-핀.svg");
   content: "";
   position: absolute;
   width: 35px;
@@ -419,7 +423,7 @@ li::before {
 
 /* Experience 제목 핀 아이콘 배치 */
 .experience-container .section-title::after {
-  background-image: url("../images/메인_이미지/Experience-핀.svg"); /* 핀 이미지 경로 */
+  background-image: url("../assets/img/메인_이미지/Experience-핀.svg"); /* 핀 이미지 경로 */
   content: "";
   position: absolute; /* .section-title (h2)가 relative 기준점 */
   width: 35px;
@@ -500,7 +504,7 @@ li {
   position: relative;
   width: 1200px; /* 배경 이미지의 실제 가로 크기 */
   height: 350px; /* 배경 이미지의 실제 세로 크기 */
-  background-image: url("../images/푸터_이미지/푸터_배경이미지.svg");
+  background-image: url("../assets/img/푸터_이미지/푸터\ 배경이미지.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
@@ -536,6 +540,7 @@ li {
 
 .footer-content-wrapper h4:hover {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .contact-list {
@@ -578,11 +583,13 @@ li {
   color: #ff5e78;
   font-weight: bold;
   transform: translateX(5px);
+  cursor: pointer;
 }
 
 .contact-item:hover .icon-wrapper {
   background-color: #ff5e78;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .contact-icon-img {
