@@ -227,7 +227,7 @@ li {
 
 .main-section h2 {
   font-size: 30px;
-  font-family: "Inter" sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -287,6 +287,10 @@ li {
 
 .title-edu {
   color: #a2faff;
+  font-size: 32px; /* 기존보다 크게 조정 */
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
 }
 
 .title-skill {
@@ -317,17 +321,29 @@ li::before {
   position: absolute;
 }
 
+.education-container h2.section-title {
+  position: relative;
+  display: inline-block;
+}
+
 .education-container h2.section-title::after {
   background-image: url("../assets/img/메인_이미지/Education-핀.svg");
   content: "";
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background-size: contain;
   background-repeat: no-repeat;
-  top: 0;
-  right: -30px;
+  top: -5px;
+  right: -50px;
   z-index: 10;
+}
+
+/* 리스트 간격 */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* 항목 사이의 간격을 띄움 */
 }
 
 .education-container span {
@@ -335,31 +351,64 @@ li::before {
   font-weight: 600;
 }
 
-.circle-score-box {
+/* 개별 항목 스타일링 */
+.edu-item {
   display: flex;
-  gap: 30px;
-  align-items: center;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-start; /* 연도와 텍스트 상단 맞춤 */
+  gap: 20px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.year-edu-box,
-.score-box {
+/* 연도 배지 스타일 */
+.year-badge {
   font-size: 18px;
-  font-family: "Inter" sans-serif;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
   color: #fff;
-  width: 120px;
-  height: 30px;
-  border-radius: 15px;
-  border: 1px solid #fff;
+  min-width: 100px; /* 너비 고정 */
+  padding: 8px 25px;
+  border-radius: 30px;
+  border: 2px solid #fff;
   text-align: center;
+  flex-shrink: 0; /* 크기 유지 */
+  transition: all 0.3s ease;
 }
 
-.circle-score-box:hover,
-.circle-experience-box:hover {
-  transform-origin: left center;
-  scale: 1.2;
-  transition: scale 0.3s ease;
+/* 텍스트 내용 */
+.edu-content p {
+  margin: 0;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.edu-content span {
+  color: #a2faff;
+  font-weight: 700;
+}
+
+.edu-details {
+  font-size: 18px;
+  color: #bdc3c7 !important; /* 상세 내용은 조금 흐리게 */
+  display: block;
+  margin-top: 8px;
+}
+
+/* Hover 효과: 항목 전체가 살짝 커지며 강조됨 */
+.edu-item:hover {
+  transform: translateX(15px); /* 오른쪽으로 살짝 이동 */
+  background-color: rgba(255, 255, 255, 0.05); /* 미세한 배경색 */
   cursor: pointer;
+}
+
+.edu-item:hover .year-badge {
+  background-color: #a2faff;
+  color: #000;
+  border-color: #a2faff;
+  box-shadow: 0 0 15px rgba(162, 250, 255, 0.5);
 }
 
 /* 스킬 컨테이너 */
@@ -396,29 +445,45 @@ li::before {
   z-index: 10;
 }
 
-/* 별점 아이콘 */
-.rating-box {
+.skill-list {
+  display: flex; /* 가로로 나열 */
+  justify-content: center; /* 가운데 정렬 */
+  gap: 40px; /* 아이콘 사이 간격 */
+  margin-top: 30px;
+}
+
+.icon-item {
   display: flex;
-  flex-shrink: 0;
-  white-space: nowrap;
-  flex-direction: row;
-  justify-content: flex-end;
-  transition: scale 0.3s ease;
-  cursor: pointer;
+  flex-direction: column; /* 아이콘 아래에 글씨 배치 */
+  align-items: center; /* 수평 중앙 정렬 */
 }
 
-.rating-box i {
-  font-size: 20px;
+.svg-box {
+  width: 80px; /* 이미지 크기를 조금 더 키우는 것이 보기 좋습니다 */
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px; /* 아이콘과 글자 사이 간격 */
+}
+
+/* 경로 앞에 ../ 꼭 확인하세요! */
+.html {
+  background-image: url("../assets/img/메인_이미지/html-icon.svg");
+}
+.css {
+  background-image: url("../assets/img/메인_이미지/free-icon-css-3-732190.svg");
+}
+.js {
+  background-image: url("../assets/img/메인_이미지/javascript.svg");
+}
+
+.icon-item p {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: 0;
   color: #fff;
-  margin-left: 2px;
-}
-
-.rating-box .fas {
-  color: #fff;
-}
-
-.rating-box .far {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Experience 제목 핀 아이콘 배치 */
@@ -491,48 +556,51 @@ li {
 /* 푸터 전체 영역 */
 .footer-section {
   width: 100%;
-  height: 350px; /* 배경 이미지 높이에 맞춰 넉넉히 조절 */
+  padding: 80px 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* 바닥에 고정 */
-  overflow: hidden;
-  background-color: rgb(0, 0, 0);
-  padding-top: 20px; /* 전체 배경색 */
+  align-items: center; /* 바닥에 고정 */
+  /* overflow: hidden; */
+  background-color: #000;
 }
 
 .footer-inner {
   position: relative;
-  width: 1200px; /* 배경 이미지의 실제 가로 크기 */
-  height: 350px; /* 배경 이미지의 실제 세로 크기 */
-  background-image: url("../assets/img/푸터_이미지/푸터\ 배경이미지.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
-  flex-shrink: 0; /* 화면이 작아져도 배경 크기가 줄어들지 않게 고정 */
-  transform: scale(0.6);
+  width: 100%; /* 배경 이미지의 실제 가로 크기 */
+  height: auto;
+  max-width: 800px;
+  max-height: 250px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background-color: #dde4ec;
+  transform: none !important;
+  padding: 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 배경 안의 실제 콘텐츠 박스 */
 .footer-content-wrapper {
-  position: absolute;
-  top: 130px; /* 종이 이미지 내 위치에 맞춰 조정 */
-  left: 45%; /* 종이 이미지 내 위치에 맞춰 조정 */
-
-  /* 핵심: 배경 이미지의 기울기와 똑같은 각도로 회전 */
-  transform: rotate(
-    -5deg
-  ); /* 이미지 기울기에 따라 -3~ -7도 사이로 미세조정하세요 */
+  position: static;
+  top: 50%;
+  left: 50%;
+  transform: none !important;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-content-wrapper h4 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
   margin-left: 10px;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -546,12 +614,17 @@ li {
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  width: 100%;
+  align-items: flex-start;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .icon-wrapper {
@@ -562,7 +635,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 12px;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .contact-detail {
@@ -664,10 +738,9 @@ li {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     grid-template-areas:
-      "about exp"
-      "edu exp"
-      "skill exp";
-    gap: 40px 60px; /*  상하 40px, 좌우 60px 간격*/
+      "about skill"
+      "edu exp";
+    gap: 50px 60px; /*  상하 40px, 좌우 60px 간격*/
     align-items: start;
   }
 
@@ -680,6 +753,7 @@ li {
   }
   .skill-container {
     grid-area: skill;
+    margin-top: 20px;
   }
   .experience-container {
     grid-area: exp;
@@ -691,6 +765,13 @@ li {
 
   .main-section section {
     margin-bottom: 0;
+  }
+
+  /* 기술 스택이 늘어날 것을 대비한 스킬 리스트 정렬 수정 */
+  .skill-list {
+    justify-content: flex-start; /* 왼쪽 정렬로 변경하여 가독성 확보 */
+    flex-wrap: wrap; /* 아이콘이 많아지면 다음 줄로 넘어가도록 */
+    gap: 30px;
   }
 
   .skill-list-wrapper {
@@ -705,18 +786,18 @@ li {
   .footer-inner {
     display: flex;
     justify-content: center;
-    transform: scale(0.8);
-    transform-origin: right;
-    right: 0;
+    margin: 0 auto;
+    /* right: -20%; */
     bottom: 0;
+    width: 90%;
   }
 
   .footer-content-wrapper {
     left: 50%;
-    margin-left: -60px;
-    top: 120px;
-    transform: rotate(-5deg);
-    position: absolute;
+    margin-left: 0;
+    top: 0;
+    position: static;
+    transform: none !important;
   }
 }
 
@@ -790,13 +871,13 @@ li {
 
   /* 푸터: 왼쪽 하단 배치 */
   .footer-inner {
-    transform: scale(0.8);
-    margin-top: -40px;
+    width: 800px;
+    transform: none !important;
+    margin-top: 50px;
   }
   .footer-content-wrapper {
-    left: 50%;
-    margin-left: -30px;
-    top: 130px;
-    transform: rotate(-5deg); /* 기울기 유지 */
+    margin-left: 0;
+    top: 0;
+    transform: none !important;
   }
 }

@@ -1,0 +1,31 @@
+.svg-box {
+  width: 50px; /* 아이콘 크기 */
+  height: 50px;
+  margin: 10px auto;
+  background-size: contain; /* SVG가 박스 안에 꽉 차게 조절 */
+  background-repeat: no-repeat; /* 반복 방지 */
+  background-position: center; /* 중앙 정렬 */
+}
+
+/* 각각의 클래스에 다른 이미지 할당 */
+.html {
+  background-image: url("./assets/img/메인_이미지/html-icon.svg");
+}
+.css {
+  background-image: url("./assets/img/메인_이미지/free-icon-css-3-732190.svg");
+}
+.js {
+  background-image: url("./assets/img/메인_이미지/javascript.svg");
+}
+
+.icon-item {
+  display: inline-block; /* 가로로 나열 */
+  text-align: center;
+  margin: 20px;
+}
+
+p {
+  font-size: 20px; /* 글자 크기 조정 */
+  font-family: sans-serif;
+  margin-top: 5px;
+}
