@@ -170,21 +170,6 @@ li {
   cursor: pointer;
 }
 
-.rating-box:hover {
-  scale: 1.2;
-  cursor: pointer;
-}
-
-.rating-box i:hover,
-.rating-box i:hover ~ i {
-  color: gold !important;
-}
-
-.rating-box .fas-star-half-alt:hover,
-.rating-box .fas-star-half-alt:hover ~ i {
-  color: gold !important;
-}
-
 /* 헤더 이름 박스 */
 .header-namebox {
   position: absolute;
@@ -259,6 +244,50 @@ li {
   font-weight: 500;
   margin-bottom: 25px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* 미세한 글로우 효과 */
+}
+
+/* 좌우명 섹션 스타일 */
+.motto-wrapper {
+  background: rgba(255, 255, 255, 0.05); /* 배경을 조금 더 선명하게 */
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  border: 1px dashed rgba(255, 94, 120, 0.3);
+  position: relative;
+  text-align: center;
+}
+
+.motto-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.motto-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  display: inline-block;
+  /* min-height: 1.6rem; 타이핑 시 덜덜거림 방지 */
+}
+
+.quote-mark {
+  font-size: 2.5rem;
+  color: #ff5e78;
+  font-family: serif;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.motto-desc {
+  font-size: 0.95rem !important;
+  color: #bbb !important;
+  font-style: italic;
 }
 
 .aboutme-container h2.section-title::after {
@@ -535,6 +564,12 @@ li::before {
   color: #fff;
 }
 
+.experience-box:hover {
+  transform: scale(1.2) translateX(15px); /* 오른쪽으로 살짝 이동 */
+  background-color: rgba(255, 255, 255, 0.05); /* 미세한 배경색 */
+  cursor: pointer;
+}
+
 .experience-container span {
   color: #ffadea;
   font-weight: 600;
@@ -670,6 +705,21 @@ li {
   width: 16px;
   height: 16px;
   filter: invert(100%);
+}
+
+/* 반응형 처리 (기존 @media 850px 내부의 .aboutme-container 설정과 연동) */
+@media (max-width: 850px) {
+  .motto-text {
+    font-size: 1.3rem;
+  }
+  .motto-wrapper {
+    padding: 20px 15px;
+  }
+}
+
+/* 기존 리스트 스타일과 이질감 없도록 간격 조정 */
+.aboutme-container ul {
+  margin-top: 20px;
 }
 
 /* 태블릿 섹션 (850px 이상) */

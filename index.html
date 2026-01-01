@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포트폴리오</title>
-    <link rel="stylesheet" href="./sytles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -64,6 +64,17 @@
         <!-- about-me 컨테이너 -->
         <section class="aboutme-container">
           <h2 class="section-title title-about">About me</h2>
+
+          <div class="motto-wrapper">
+            <div class="motto-content">
+              <span class="quote-mark">“</span>
+              <h3 class="motto-text" id="typing-motto"></h3>
+              <span class="quote-mark">”</span>
+            </div>
+            <p class="motto-desc">
+              천천히, 그러나 결코 뒤로 가지 않는 성실함을 지향합니다.
+            </p>
+          </div>
           <ul>
             <li>
               <span> 사용자 경험</span>을 설계하는 프론트엔드 개발자를
@@ -219,5 +230,22 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      const text = "Slow and steady wins the race.";
+      const typingTarget = document.getElementById("typing-motto");
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          typingTarget.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 100);
+        }
+      }
+
+      // 화면에 등장할 때 타이핑 시작 (Intersection Observer 권장하나, 일단 로드 시 실행)
+      window.onload = type;
+    </script>
   </body>
 </html>
